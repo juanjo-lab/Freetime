@@ -1,0 +1,91 @@
+Uso adicional:
+ipconfig /all: Muestra información detallada de todas las interfaces de red.
+ipconfig /release y ipconfig /renew: Libera y renueva la dirección IP asignada por DHCP.
+ipconfig /flushdns: Limpia la caché DNS, útil si tienes problemas de resolución de nombres.
+2. ping: Comprobar la conectividad
+El comando ping permite enviar paquetes ICMP a un dispositivo (IP o dominio) y recibir respuestas. Esto es útil para verificar si un dispositivo en la red está disponible y medir la latencia.
+
+cmd
+Copiar código
+ping google.com
+Uso adicional:
+ping -t: Hace ping de manera indefinida hasta que lo detengas.
+ping -n X: Envía X número de paquetes ICMP (útil para pruebas controladas).
+ping -l 1000: Ajusta el tamaño del paquete de ping (1000 bytes en este caso).
+3. tracert: Trazar la ruta de red
+tracert te permite ver la ruta que toma el tráfico desde tu computadora hasta un destino remoto. Esto es útil para diagnosticar problemas de enrutamiento o determinar dónde se pierde la conectividad.
+
+cmd
+Copiar código
+tracert google.com
+Muestra cada salto (router o dispositivo de red intermedio) entre tu computadora y el servidor de destino.
+4. netstat: Ver conexiones y puertos activos
+El comando netstat muestra todas las conexiones de red activas en tu sistema, así como los puertos en escucha y estadísticas de red.
+
+cmd
+Copiar código
+netstat
+Uso adicional:
+netstat -a: Muestra todas las conexiones y puertos en escucha.
+netstat -b: Muestra las aplicaciones o procesos asociados a cada conexión.
+netstat -n: Muestra las direcciones IP y números de puerto en formato numérico en lugar de nombres de dominio.
+netstat -o: Muestra los PID (ID del proceso) asociados con cada conexión activa.
+netstat -e: Muestra estadísticas de red como paquetes enviados/recibidos.
+5. arp: Mostrar la tabla ARP (asignación IP-MAC)
+El comando arp te muestra la tabla ARP, que contiene la asignación de direcciones IP a direcciones MAC en tu red local.
+
+cmd
+Copiar código
+arp -a
+Muestra la tabla de correspondencia entre direcciones IP y direcciones MAC en tu red local.
+6. nslookup: Resolver nombres de dominio
+Este comando te permite consultar servidores DNS y verificar la resolución de nombres de dominio. Es útil para diagnosticar problemas relacionados con DNS.
+
+cmd
+Copiar código
+nslookup google.com
+Puedes usarlo para verificar si tu servidor DNS está funcionando correctamente y resolviendo nombres de dominio.
+7. tasklist y taskkill: Monitorizar y gestionar procesos
+Para monitorizar los procesos activos que utilizan la red, puedes usar tasklist para ver los procesos y combinarlos con netstat para identificar el tráfico.
+
+cmd
+Copiar código
+tasklist
+Si encuentras un proceso que está utilizando demasiados recursos de red, puedes finalizarlo con:
+
+cmd
+Copiar código
+taskkill /PID <ID_del_proceso> /F
+8. Getmac: Ver la dirección MAC
+Puedes obtener la dirección MAC de tus adaptadores de red utilizando el comando getmac.
+
+cmd
+Copiar código
+getmac
+Esto te mostrará las direcciones MAC de todas las interfaces de red activas.
+
+9. pathping: Combina ping y tracert
+El comando pathping es una combinación de ping y tracert, y es útil para diagnosticar problemas de latencia y pérdida de paquetes a lo largo de una ruta de red.
+
+cmd
+Copiar código
+pathping google.com
+pathping te muestra la ruta de la red y realiza pruebas de latencia y pérdida de paquetes en cada salto.
+10. netsh: Configuración avanzada de red
+El comando netsh es extremadamente poderoso y te permite configurar diferentes aspectos de tu red, como las interfaces, el firewall y más.
+
+Ejemplo de ver estadísticas de la red:
+cmd
+Copiar código
+netsh interface ipv4 show interfaces
+Ejemplo de mostrar configuración del firewall:
+cmd
+Copiar código
+netsh advfirewall show allprofiles
+11. route: Ver y manipular tablas de enrutamiento
+El comando route te permite ver y modificar la tabla de enrutamiento de tu equipo.
+
+cmd
+Copiar código
+route print
+Muestra las rutas que tu sistema utiliza para enviar el tráfico de red.

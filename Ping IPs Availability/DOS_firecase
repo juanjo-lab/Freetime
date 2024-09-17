@@ -1,0 +1,10 @@
+ping 192.168.1.XX -t -l 65500
+-t: Envia pings indefinidamente hasta que lo detengas manualmente.
+-l 65500: Envia paquetes de 65,500 bytes de tamaño, el mayor tamaño permitido por el comando ping.
+
+Este comando haría que tu dispositivo envíe una cantidad muy alta de tráfico a la IP seleccionada. Sin embargo, esto es potencialmente dañino, y no es recomendable.
+
+Riesgos de intentar saturar un dispositivo en tu red:
+Red doméstica inestable: Al realizar esto, podrías saturar no solo el dispositivo objetivo, sino también el ancho de banda disponible en toda tu red.
+Posible bloqueo del router: Los routers domésticos no están diseñados para manejar grandes volúmenes de tráfico como los que genera un ataque DoS. Podrías sobrecargar tu router y desconectar todos los dispositivos de la red.
+Comportamiento no ético: Saturar un dispositivo intencionadamente para impedir su uso se considera un abuso de red y puede ser considerado una infracción legal dependiendo de la jurisdicción.
